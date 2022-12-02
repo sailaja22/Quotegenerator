@@ -14,6 +14,7 @@ body {
 }
 
 .container {
+    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -74,13 +75,19 @@ body {
 .buttons {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     width: 100%;
     height: 16%;
+    position: relative;
 }
+
 
 .buttons i:is(:hover, .active) {
     color: rgb(117, 117, 117);
+}
+
+.copy {
+    margin-left: 2%;
 }
 
 .new {
@@ -91,6 +98,9 @@ body {
     color: #000000;
     background-color: rgb(233, 233, 233);
     border: #585858;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
 }
 
 .new:hover {
