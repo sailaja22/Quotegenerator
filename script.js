@@ -10,40 +10,41 @@ function colorflipper () {
   document.body.style.backgroundColor = hexColor;
 }
 
-const text=document.getElementById("quote");
 
-const displayQuote = () =>{
-  
-    let index = Math.floor(Math.random()*data.length);
-  
-    let quote = data[index].text;
-  
-    text.innerHTML = quote; 
-    
-    fet
-  
+const quoteText = document.querySelector(".quote"),
+quoteBtn = document.querySelector("button"),
+speechBtn = document.querySelector(".speech"),
+copyBtn = document.querySelector(".copy"),
+synth = speechSynthesis;
+
+function randomQuote(){
+    quoteBtn.classList.add("loading");
+    quoteBtn.innerText = "Loading Quote...";
+    fetch("http://api.quotable.io/random").then(response => response.json()).then(result => {
+        quoteText.innerText = result.content;
+        quoteBtn.classList.remove("loading");
+        quoteBtn.innerText = "New Quote";
+    });
 }
-
-// const fetchQuote = () =>{
-//     const result = fetch("https://type.fit/api/quotes")
-//     .then(function(response) {
-//         return response.json(); 
-//     }) 
-//     .then(function(data) {
-//         return data; 
-// });
-
-// console.log(result);
-
-// }
-
-async function getText() {
-    let x = await fetch("https://type.fit/api/quotes");
-    let y = await x.json();
-    console.log(y);
-  }
 
 function newQuote(){
-    colorflipper ();
-    getText();
+  colorflipper ();
+  randomQuote(); 
 }
+
+speechBtn.addEventListener("click", ()=>{
+    if(!quoteBtn.classList.contains("loading")){
+        let utterance = new SpeechSynthesisUtterance(`${quoteText.innerText}`);
+        synth.speak(utterance);
+        setInterval(()=>{
+            !synth.speaking ? speechBtn.classList.remove("active") : speechBtn.classList.add("active");
+        }, 10);
+    }
+});
+
+copyBtn.addEventListener("click", ()=>{
+    navigator.clipboard.writeText(quoteText.innerText);
+});
+
+
+
