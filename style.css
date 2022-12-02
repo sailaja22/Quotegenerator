@@ -44,37 +44,38 @@ body {
 
 }
 
-.fas{
-    justify-content: space-between;
-    font-size: 70%;
+.content{
+    display: flex;
+    margin-top: 7%;
+    height:300px;
+    margin-bottom: 10%;
+    font-size: 80%;
 }
+
 
 .fa-quote-left{
     position: absolute;
     left:5%;
-    top:25%;
+   
 }
 
 .fa-quote-right{
     position: absolute;
     right:5%;
-    bottom:20%;
+    bottom: 15%;
 }
 
 .quote
 {
-    display:flex;
     text-align: center;
-    font-size: 80%;
     font-weight: lighter;
-    margin-top: 20%;
-    font-family: italic;
-    height:300px;
+    margin-top: 10%;
+    
 }
 
 
 .buttons .features{
-    margin-top: 35px;
+    margin-top: 25px;
     
 }
 
@@ -102,7 +103,7 @@ ul li:is(:hover, .active){
 }
   
 
-.refresh
+.new
 {
     display: flex;
     align-items: center;
@@ -110,13 +111,12 @@ ul li:is(:hover, .active){
     border-radius: 16px;
     cursor:pointer;
     padding: 10px;
-    margin-top: 0px;
     color: #000000;
     background-color: rgb(233, 233, 233);
     border: #585858;
 }
 
-.refresh:hover
+.new:hover
 {
     color:rgb(255, 255, 255);
     background: rgb(0, 0, 0);
@@ -135,30 +135,23 @@ ul li:is(:hover, .active){
         margin-right:20px;
     }
 
-    .refresh{
+    .new{
         margin-top: 57%;
     }
 
     .fa-headset{
-        margin-top:10%;
+        margin-top:14%;
         left:5%;
     }
     
     .fa-copy{
-        margin-top:10%;
+        margin-top:14%;
         left:17%;
     }
 
     .fa-quote-left{
-        left:5%;
-        top:25%;
-    }
-    
-    .fa-quote-right{
-        right:5%;
-        bottom:45%;
+        margin-top: 15%;
     }
 
 
 }
-
