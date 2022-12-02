@@ -8,150 +8,111 @@ body {
     background-color: #cfd9f1;
     display: flex;
     align-items: center;
-    justify-items: center;
-
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
 }
 
 .container {
-    display:flex;
+    display: flex;
     flex-direction: column;
-    position: absolute;
     align-items: center;
-    justify-items: center;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
+    justify-content: space-between;
     font-size: 30px;
-    padding: 30px;
+    padding: 0.5% 1.5%;
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.6);
     border-radius: 15px;
-    width: 600px;
     margin: 10px;
-    height: 300px;
+    width: 45vw;
+    height: 45vh;
 }
 
 
 
-.title{
-    position: absolute;
-    top:12%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
+.title {
     font-weight: bold;
     font-size: 40px;
-
 }
 
-.content{
+.content {
+    height: 65%;
     display: flex;
-    margin-top: 7%;
-    height:300px;
-    margin-bottom: 10%;
-    font-size: 80%;
+    flex-direction: column;
+    align-items: center;
+    width: 100% !important;
+    font-size: 75%;
+    padding: 4% 0;
 }
 
 
-.fa-quote-left{
-    position: absolute;
-    left:5%;
-   
+.fa-quote-left {
+    justify-self: flex-start;
+    align-self: flex-start;
 }
 
-.fa-quote-right{
-    position: absolute;
-    right:5%;
-    bottom: 15%;
-}
-
-.quote
-{
-    text-align: center;
+.quote {
+    padding: 0% 4.8%;
+    height: 80%;
     font-weight: lighter;
-    margin-top: 10%;
-    
-}
-
-
-.buttons .features{
-    margin-top: 25px;
-    
-}
-
-.features ul{
     display: flex;
+    align-items: center;
+    text-align: center;
+    overflow-x: scroll;
+    overflow-y: scroll;
 }
 
-.features ul li{
-    list-style: none;
-    
+.quote::-webkit-scrollbar {
+    display: none;
 }
 
-ul li:is(:hover, .active){
+.fa-quote-right {
+    justify-self: flex-end;
+    align-self: flex-end;
+}
+
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 16%;
+}
+
+.buttons i:is(:hover, .active) {
     color: rgb(117, 117, 117);
 }
 
-.fa-headset{
-    position: absolute;
-    left:5%;
-}
-
-.fa-copy{
-    position: absolute;
-    left:12%;
-}
-  
-
-.new
-{
-    display: flex;
-    align-items: center;
-    font-size: 12px;
+.new {
+    font-size: 13px;
     border-radius: 16px;
-    cursor:pointer;
+    cursor: pointer;
     padding: 10px;
     color: #000000;
     background-color: rgb(233, 233, 233);
     border: #585858;
 }
 
-.new:hover
-{
-    color:rgb(255, 255, 255);
+.new:hover {
+    color: rgb(255, 255, 255);
     background: rgb(0, 0, 0);
 
 }
 
 
-@media only screen and (max-width: 700px){  
-    .quote { 
-        font-size:70%;
-        margin-top: 50%;
-    }
+@media only screen and (max-width: 700px) {
     .container {
-        width:350px;
-        height:500px;
-        margin-right:20px;
+        width: 90vw;
+        height: 50vh;
+        padding: 3.5% 4.5%;
     }
 
-    .new{
-        margin-top: 57%;
+    .title {
+        font-size: 32px;
     }
 
-    .fa-headset{
-        margin-top:14%;
-        left:5%;
+    .content {
+        font-size: 75%;
+        height: 55%;
     }
-    
-    .fa-copy{
-        margin-top:14%;
-        left:17%;
-    }
-
-    .fa-quote-left{
-        margin-top: 15%;
-    }
-
-
 }
