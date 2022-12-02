@@ -5,16 +5,11 @@ const btn = document.getElementById("refresh");
 function colorflipper () {
   let hexColor = "#";
   for (let i = 0; i < 6; i++) {
-    hexColor += hex[getRandomNumber()];
+    hexColor += hex[Math.floor(Math.random() * hex.length)];
   }
 
   document.body.style.backgroundColor = hexColor;
 }
-
-function getRandomNumber() {
-  return Math.floor(Math.random() * hex.length);
-}
-
 
 const text=document.getElementById("quote");
 
